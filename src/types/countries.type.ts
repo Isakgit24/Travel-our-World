@@ -1,5 +1,5 @@
 
-import Countries from "../pages/Countries"
+import Countries from "../pages/Home"
 
 type NativeName = {
     common: string
@@ -12,6 +12,7 @@ export type CountriesResponse = {
     }
 }
 export type Countries = {
+   
     names: {
         common: string
         official: string
@@ -39,7 +40,7 @@ export type Countries = {
         symbol: string
     }[]
     population: number
-
+    uuid:string
     languages: {
         name: string
 
