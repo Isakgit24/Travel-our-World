@@ -20,6 +20,10 @@ export type Countries = {
     }
     capitals: {
         name: string
+        coordinates: {
+        lat: number
+        lng: number
+    }
     }[]
     flag: {
         url_png: string
@@ -30,10 +34,7 @@ export type Countries = {
 
     continents: string[]
 
-    coordinates: {
-        lat: number
-        lng: number
-    }
+ 
     currencies: {
         code: string
         name: string

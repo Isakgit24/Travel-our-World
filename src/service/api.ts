@@ -1,9 +1,6 @@
-const token = 'rc_live_4271148537854703b9d324cd24af61b8'
 
-async function request<T>(url:string):Promise<T> {
-    const res = await fetch(url,{
-        headers:{'Authorization':`Bearer ${token}`}
-    })
+async function request<T>(url:string,options:RequestInit = {}):Promise<T> {
+    const res = await fetch(url,options)
     if(!res.ok){
         throw  new Error('Api request went wrong')
     }
