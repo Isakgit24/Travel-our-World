@@ -4,17 +4,24 @@ import './App.css'
 
 import { CountryDetail } from './pages/CountryDetail'
 import Home from './pages/Home'
+import Nav from './components/Nav'
+
 
 
 function App() {
- 
 
   return (
     <>
-    <Routes>
-       <Route path="/" element={< Home/>} />
-           <Route path={'/home/:id'} element={< CountryDetail/>} />
-       </Routes>
+      <header>
+        <Nav />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={< Home />} />
+          <Route path={'/countries/:id'} element={< CountryDetail />} />
+        </Routes>
+        
+      </main>
     </>
   )
 }

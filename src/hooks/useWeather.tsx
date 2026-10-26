@@ -14,6 +14,6 @@ export  function useWeather(lat?:number,lng?:number) {
         return getWeather(lat,lng)
     },
     enabled: lat !== undefined && lng !== undefined,
-    staleTime:60_000,
+    staleTime: 10_800_000,
   })
 }

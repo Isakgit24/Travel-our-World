@@ -9,7 +9,17 @@ type NativeName = {
 export type CountriesResponse = {
     data: {
         objects: Countries[]
+        meta: {
+            total: number
+            count: number
+            limit: number
+            offset: number
+            more: boolean
+            request_id: string
+            duration: number
+        }
     }
+     
 }
 export type Countries = {
    

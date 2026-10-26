@@ -12,6 +12,9 @@ export const CountryDetail = () => {
     capital?.coordinates.lat,
     capital?.coordinates.lng
  )
+ if(weather.data?.current.weather_code === 0){
+<p></p>
+ }
     if (error) {
         return <p>Something went wrong:{error.message}</p>
     }
@@ -72,8 +75,7 @@ export const CountryDetail = () => {
 
                         <li key={`${country.uuid}-${index}`}>
                             <p>Capital: {capital.name}</p>
-                            <p>cords: {capital.coordinates.lat}</p>
-                            <p>cords: {capital.coordinates.lng}</p>
+                         
 
                         </li>
 
@@ -83,7 +85,7 @@ export const CountryDetail = () => {
                 <div>
                  <p>Väder kod: {weather.data.current.weather_code}</p>
                 <p>Temperatur: {weather.data.current.temperature_2m} ℃</p>
-                  <p>vindhastighet: {weather.data.current.wind_speed_10m}</p>
+                  <p>vindhastighet: {weather.data.current.wind_speed_10m} km/h</p>
                   </div>
                )}
             </CardContent>

@@ -13,10 +13,10 @@ export const CountriesCard = ({ countries }: CountriesCardProps) => {
     return (
         <Card className="flex flex-row justify-evenly w-100 items-center m-1">
             <CardHeader className="mr-20">
-                <Link to={`/home/${countries.uuid}`}>
+                <Link to={`/countries/${countries.uuid}`}>
                 <CardTitle >{countries.names.common}</CardTitle>
 
-                {hasFlag && <img  className="w-30" src={countries.flag.url_png} alt={countries.names.official} />}
+                {hasFlag && <img  className="w-40 h-24 object-contain" src={countries.flag.url_png} alt={countries.names.official} />}
                 </Link>
             </CardHeader>
             <CardContent>

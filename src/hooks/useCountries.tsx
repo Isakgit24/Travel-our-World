@@ -7,6 +7,6 @@ export  function useCountries() {
   return useQuery({
     queryKey: ['countries'],
     queryFn:getCountries,
-    staleTime:60_000,
+    staleTime:10_800_000,
   })
 }
