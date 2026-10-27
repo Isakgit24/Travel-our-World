@@ -19,10 +19,10 @@ export type CountriesResponse = {
             duration: number
         }
     }
-     
+
 }
 export type Countries = {
-   
+
     names: {
         common: string
         official: string
@@ -31,9 +31,9 @@ export type Countries = {
     capitals: {
         name: string
         coordinates: {
-        lat: number
-        lng: number
-    }
+            lat: number
+            lng: number
+        }
     }[]
     flag: {
         url_png: string
@@ -44,17 +44,22 @@ export type Countries = {
 
     continents: string[]
 
- 
+
     currencies: {
         code: string
         name: string
         symbol: string
     }[]
     population: number
-    uuid:string
+    uuid: string
     languages: {
         name: string
 
     }[]
+    codes: {
 
+        alpha_3: string
+
+
+    },
 }
