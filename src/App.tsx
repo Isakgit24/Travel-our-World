@@ -5,6 +5,7 @@ import './style/App.css'
 import { CountryDetail } from './pages/CountryDetail'
 import Home from './pages/Home'
 import Nav from './components/Nav'
+import NotFound from './pages/NotFound'
 
 
 
@@ -18,7 +19,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={< Home />} />
-          <Route path={'/countries/:code'} element={< CountryDetail />} />
+          <Route path={'/countries/:identifier'} element={< CountryDetail />} />
+        <Route path="*" element={< NotFound />} />
         </Routes>
         
       </main>

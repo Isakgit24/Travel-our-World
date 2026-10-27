@@ -6,6 +6,7 @@ import { Button } from "@/ui/button"
 import { Input } from "@/ui/input"
 import { useSearchRegionFilter } from "@/hooks/useSearch-RegionFilter"
 import usePagering from "@/hooks/usePagering"
+import useRetry from "@/hooks/useRetry"
 
 
 function Home() {
@@ -13,10 +14,19 @@ function Home() {
   const {search,region,handleRegionChange,handleSearchChange,all} = useCountrySearchParams()
   const {matchCountries,searchMatches,regions} = useSearchRegionFilter()
 const {setPage,visibleCountries,currentPage,pageCount} = usePagering()
+const {retryCountries} = useRetry()
 
 
   if (error) {
-    return <p>Something went wrong:{error.message}</p>
+   return <div>
+            <p >Something went wrong with getting the Country:{error.message}</p> 
+            <Button 
+            className="bg-green-400"
+        
+            onClick={()=>retryCountries()}
+          
+            >Try again</Button>
+        </div> 
   }
 
 
@@ -27,7 +37,7 @@ const {setPage,visibleCountries,currentPage,pageCount} = usePagering()
     <>
       <div>
         <form onSubmit={(e)=>e.preventDefault()} >
-          <label htmlFor='search'>Search</label>
+          <label htmlFor='search-input'>Search</label>
           <Input
             id="search-input"
             type="search"
@@ -39,11 +49,12 @@ const {setPage,visibleCountries,currentPage,pageCount} = usePagering()
         </form>
       </div>
 
-      <div className="flex flex-row justify-center items-center gap-4 mb-4 mt-4">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-4 mb-4 mt-4">
         <Button
           onClick={all}
           variant="outline"
           className='rounded-full'
+          aria-pressed="false"
 
         >All
         </Button>
@@ -53,7 +64,7 @@ const {setPage,visibleCountries,currentPage,pageCount} = usePagering()
             onClick={() => handleRegionChange(reg)}
             variant="outline"
             className='rounded-full'
-
+aria-pressed="false"
           >{reg}
 
           </Button>
@@ -76,6 +87,7 @@ const {setPage,visibleCountries,currentPage,pageCount} = usePagering()
  <Button
  disabled={currentPage <= 1}
  onClick={()=> setPage(currentPage - 1)}
+ aria-pressed="false"
  >Prev
  
  </Button>
@@ -85,6 +97,7 @@ const {setPage,visibleCountries,currentPage,pageCount} = usePagering()
  <Button
  disabled={currentPage >= pageCount}
  onClick={()=> setPage(currentPage + 1)}
+ aria-pressed="false"
  > Next
  
  </Button>

@@ -27,6 +27,6 @@ export const getCountries = async ():Promise<Countries[]> => {
     more = res.data.meta.more
     offset += res.data.meta.count 
 }
-console.log(offset)
+
 return allCountries
 }

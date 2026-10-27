@@ -9,15 +9,23 @@ type CountriesCardProps = {
 export const CountriesCard = ({ countries }: CountriesCardProps) => {
 
     const hasFlag = Boolean(countries.flag.url_png || countries.flag.url_svg)
+    
+const identifier = countries.codes.alpha_3
+? countries.codes.alpha_3.toLowerCase()
+:countries.uuid
 
     return (
         <Card className="flex flex-row justify-evenly w-100 items-center m-1">
             <CardHeader className="mr-20">
-                <Link to={`/countries/${countries.codes.alpha_3.toLowerCase()}`}>
+                
+              <Link to={ `/countries/${identifier}`}>
+               
                 <CardTitle >{countries.names.common}</CardTitle>
 
-                {hasFlag && <img  className="w-40 h-24 object-contain" src={countries.flag.url_png} alt={countries.names.official} />}
+                {hasFlag && <img  className="w-40 h-24 object-contain" src={countries.flag.url_png ||countries.flag.url_svg} alt={countries.names.official} />}
                 </Link>
+                   
+                
             </CardHeader>
             <CardContent>
                 <ul>
