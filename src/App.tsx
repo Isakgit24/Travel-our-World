@@ -6,6 +6,7 @@ import { CountryDetail } from './pages/CountryDetail'
 import Home from './pages/Home'
 import Nav from './components/Nav'
 import NotFound from './pages/NotFound'
+import { Footer } from './components/Footer'
 
 
 
@@ -24,6 +25,7 @@ function App() {
         </Routes>
         
       </main>
+      <Footer/>
     </>
   )
 }

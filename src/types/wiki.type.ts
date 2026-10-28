@@ -1,11 +1,11 @@
 
 
 export type WikiSummary = {
-thumbnail: {
+thumbnail?: {
     source:string
    
   }
-  originalimage: {
+  originalimage?: {
     source: string
   }
   extract:string
