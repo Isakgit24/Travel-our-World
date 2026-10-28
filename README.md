@@ -1,3 +1,16 @@
+README med: vad appen gör, hur man kör den lokalt ( npm install , ev. .env , npm run dev ), vilket
+ramverk du valde och varför, vilka fördjupningar du gjort, och länk till deployment. README ska också
+ha:
+AI-redovisning: vilka AI-verktyg du har använt (t.ex. ChatGPT, Claude, Copilot) och till vad, t.ex.
+felsökning, förklaringar eller kodförslag. Har du inte använt något skriver du det. Du ska kunna
+förklara all kod i projektet, även den du fick hjälp med.
+Reflektion (3–5 meningar): vad gick bra, vad var svårast, och vad skulle du göra annorlunda nästa
+gång?
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
