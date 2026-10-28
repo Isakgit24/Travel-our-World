@@ -155,8 +155,8 @@ typeof location.state?.returnTo === 'string'
                     <div>
                         <weatherInfo.icon aria-hidden='true'/>
                         <p>{weatherInfo.description}</p>
-                        <p>Temperatur: {weather.data.current.temperature_2m} ℃</p>
-                        <p>vindhastighet: {weather.data.current.wind_speed_10m} km/h</p>
+                        <p>temperature: {weather.data.current.temperature_2m} ℃</p>
+                        <p>Wind speed: {weather.data.current.wind_speed_10m} km/h</p>
                     </div>
                 )}
                     <a  className='bg-green-400 rounded-full p-1 mb-2 ' href={summary.data?.content_urls.desktop.page} 
