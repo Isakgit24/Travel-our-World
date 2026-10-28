@@ -4,9 +4,9 @@ import useRetry from "@/hooks/useRetry"
 import { useWeather } from "@/hooks/useWeather"
 import { useWikiSummary } from "@/hooks/useWikiSummary"
 import { Button } from "@/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/card"
+import { Card, CardContent, CardTitle } from "@/ui/card"
 import { Skeleton } from "@/ui/skeleton"
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import { Cloud } from "lucide-react"
 export const CountryDetail = () => {
     const { identifier } = useParams()
@@ -91,7 +91,11 @@ export const CountryDetail = () => {
         )
     }
 
-
+const location = useLocation()
+const returnTo =
+typeof location.state?.returnTo === 'string'
+? location.state.returnTo 
+:'/'
     const nativeObj = country.names.native
     const hasFlag = Boolean(country.flag.url_png || country.flag.url_svg)
     const hasThumbnail = Boolean(summary.data?.thumbnail?.source || summary.data?.originalimage?.source)
@@ -100,6 +104,7 @@ export const CountryDetail = () => {
         <Card className="mx-2 my-4 flex min-w-0 flex-col items-start sm:mx-4 sm:my-6 lg:mx-auto lg:my-8 lg:max-w-5xl">
 
             <CardContent>
+                <Link to={returnTo}>Go back to search results</Link>
                 <div className="flex flex-row items-center justify-center">
                     {hasThumbnail && <img className="w-full max-w-2xl h-auto object-contain sm:max-w-2xl lg:max-w-4xl" src={summary.data?.originalimage?.source || summary.data?.thumbnail?.source} alt={`${country.names.common}s thumbnail`} />}
                 </div>

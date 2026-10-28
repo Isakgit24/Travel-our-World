@@ -1,12 +1,14 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/ui/card"
 import type { Countries } from "../types/countries.type"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 type CountriesCardProps = {
     countries: Countries
 }
 export const CountriesCard = ({ countries }: CountriesCardProps) => {
+    const location = useLocation()
+    const returnTo = `${location.pathname}${location.search}${location.hash}`
 
     const hasFlag = Boolean(countries.flag.url_png || countries.flag.url_svg)
     
@@ -18,11 +20,13 @@ const identifier = countries.codes.alpha_3
         <Card className=" flex w-full  min-w-0  flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <CardHeader className="mr-0">
                 
-              <Link to={ `/countries/${identifier}`}>
+              <Link to={ `/countries/${identifier}`}
+              state={{returnTo}}
+              >
                
                 <CardTitle >{countries.names.common}</CardTitle>
 
-                {hasFlag && <img  className="w-40 h-24 object-contain" src={countries.flag.url_png ||countries.flag.url_svg} alt={countries.names.official} />}
+                {hasFlag && <img  className="w-40 h-24 object-contain" src={countries.flag.url_png ||countries.flag.url_svg} alt={countries.names.common} />}
                 </Link>
                    
                 
