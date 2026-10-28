@@ -95,6 +95,7 @@ function Home() {
       {search && region && matchCountries.length === 0 && searchMatches.length > 0 && (
         <p>{search} was found but not in {region}</p>
       )}
+      <div className="flex flex-row items-center justify-center mt-2">
       <Button
         disabled={currentPage <= 1}
         onClick={() => setPage(currentPage - 1)}
@@ -112,6 +113,7 @@ function Home() {
       > Next
 
       </Button>
+      </div>
     </>
   )
 }
