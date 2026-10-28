@@ -15,8 +15,8 @@ const identifier = countries.codes.alpha_3
 :countries.uuid
 
     return (
-        <Card className="flex flex-row justify-evenly w-100 items-center m-1">
-            <CardHeader className="mr-20">
+        <Card className=" flex w-full  min-w-0  flex-col items-center gap-4 sm:flex-row sm:justify-between">
+            <CardHeader className="mr-0">
                 
               <Link to={ `/countries/${identifier}`}>
                
@@ -28,6 +28,7 @@ const identifier = countries.codes.alpha_3
                 
             </CardHeader>
             <CardContent>
+              
                 <ul>
                   
                     {countries.capitals.map((capital, index) => (

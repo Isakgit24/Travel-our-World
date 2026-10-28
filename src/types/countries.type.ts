@@ -1,5 +1,5 @@
 
-import Countries from "../pages/Home"
+
 
 type NativeName = {
     common: string
