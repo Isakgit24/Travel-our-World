@@ -1,45 +1,39 @@
-README med: vad appen gör, hur man kör den lokalt ( npm install , ev. .env , npm run dev ), vilket
-ramverk du valde och varför, vilka fördjupningar du gjort, och länk till deployment. README ska också
-ha:
-AI-redovisning: vilka AI-verktyg du har använt (t.ex. ChatGPT, Claude, Copilot) och till vad, t.ex.
-felsökning, förklaringar eller kodförslag. Har du inte använt något skriver du det. Du ska kunna
-förklara all kod i projektet, även den du fick hjälp med.
-Reflektion (3–5 meningar): vad gick bra, vad var svårast, och vad skulle du göra annorlunda nästa
-gång?
+
+Denna appen hämtar information om världs alla länder, till exempel deras huvudstad, flagga, språk, väder, en beskrivning av landet med mer.
+Man kan då söka på länder och får information om dem och man kan också filtrera länder baserat på deras region
+och söka i en specifik region efter ett land och om det inte finns just i den region så visas att landet finns på hemsida men inte just i den regionen. 
+man kan bläddra mellan länderna även när man har sökt och filtrat med region. 
+
+
+### Ramverk
+Jag valde React som ramverk och anledningne till det är att jag har jobbat mest med React under dennna kursen så jag kände mig mest bekväm med React jämförsvis med Next.js Jag gjorde ingen fördjupning 
+
+här är Länken till Appen:
+Den är deployade i netlify
+https://travelourworld.netlify.app/ 
+
+Jag valde att ha appen på Engelska för att Wikipedias api på svenska hade mindre bilder och intro texter i jämförelse med den engelska versionen.
+
+Reflektion:
+Det gick bra at hämta data från det olika apierna tex att använda namnet på landet från REST countries för att hämta wikipedias api intro text och bild för landet, använda använda REST countries huvud stads cornidnater för att hämta vändret.
+Gick bra att använda shadcn komponenter och Tailwind CSS för utseendet skulle.
+något som vart svårt var paginering för det har jag aldrig jobbat med tidigare och URLsearchparams navigering för på denna skalan var också svårt av samma anledning.
+Något jag skulle göra annorlunda nästa gång är att vara  snabbare så jag kan lägga mer tid på att hemsidan ser bättre ut. Till nästa gång vill jag skriva bättre fel meddelade vid ett misslyckat API anrop i api.ts som mer beskriver felet specifikt.
 
 
 
+AI-redovisning: Jag använde Copilot för rådgivning, förklaring, kod exempel och felsöking. 
 
 
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Om du vill köra projktet lokalt
+behöver du Node.js och npm
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Rör att instalera
+1.Behöver du klona repot och öppna projektmappen
+2.du skriver npm install i din terminal
+3.skapa filen .env.local i projekts rotmap inte inuti i src
+4.Lägg din REST countries api key där i detta formatet:
+VITE_COUNTRIES_API_KEY=din_api_nyckel
+5.starta utveckling genom att skriva npm run dev i teminalen
+6.kontrolera Typescript och bygg  produktionsversionen med npm run build.
