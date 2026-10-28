@@ -7,8 +7,7 @@ export function useCountrySearchParams()  {
 
   const region = searchParams.get('region') || ''
   const search = searchParams.get('search') || ''
-const pageValue = Number(searchParams.get('page') ?? '1')
-const page = Number.isInteger(pageValue) && pageValue > 0 ? pageValue : 1
+
 
   const updateParams = (
     updates: Record<string, string | null>,
@@ -43,18 +42,13 @@ const page = Number.isInteger(pageValue) && pageValue > 0 ? pageValue : 1
     updateParams({region: null},true)
   }
 
-const setPage = (value:number)=>{
-  updateParams({page:String(value) },true)
-}
 
   return {
    search,
    region,
-   page,
    handleSearchChange,
    handleRegionChange,
    all,
-   setPage,
    updateParams
 
 }
