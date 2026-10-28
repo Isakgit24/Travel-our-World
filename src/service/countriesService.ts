@@ -4,7 +4,7 @@ import request from './api'
 
 
 
-const token = 'rc_live_4271148537854703b9d324cd24af61b8'
+const token = import.meta.env.VITE_COUNTRIES_API_KEY
 
 export const getCountries = async ():Promise<Countries[]> => {
     const allCountries:Countries[] = []
