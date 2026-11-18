@@ -1,39 +1,36 @@
+Den här appen hämtar information om världens alla länder, till exempel huvudstad, flagga, språk, väder och en beskrivning av landet med mera.
 
-Denna appen hämtar information om världs alla länder, till exempel deras huvudstad, flagga, språk, väder, en beskrivning av landet med mer.
-Man kan då söka på länder och får information om dem och man kan också filtrera länder baserat på deras region
-och söka i en specifik region efter ett land och om det inte finns just i den region så visas att landet finns på hemsida men inte just i den regionen. 
-man kan bläddra mellan länderna även när man har sökt och filtrat med region. 
-
+Man kan söka efter länder och få information om dem. Det går också att filtrera länder efter region och söka efter ett land i en specifik region. Om landet inte finns i den valda regionen visas ett meddelande om att landet finns på hemsidan, men inte i den regionen. Man kan bläddra mellan länderna även efter att man har sökt eller filtrerat efter region.
 
 ### Ramverk
-Jag valde React som ramverk och anledningne till det är att jag har jobbat mest med React under dennna kursen så jag kände mig mest bekväm med React jämförsvis med Next.js Jag gjorde ingen fördjupning 
+Jag valde React som ramverk. Anledningen är att jag har arbetat mest med React under kursen, så jag kände mig mest bekväm med React jämfört med Next.js. Jag gjorde ingen fördjupning.
 
-här är Länken till Appen:
-Den är deployade i netlify
-https://travelourworld.netlify.app/ 
+### Länk till appen
+Appen är driftsatt på Netlify:
+https://travelourworld.netlify.app/
 
-Jag valde att ha appen på Engelska för att Wikipedias api på svenska hade mindre bilder och intro texter i jämförelse med den engelska versionen.
+Jag valde att ha appen på engelska eftersom Wikipedias API på svenska hade färre bilder och introduktionstexter jämfört med den engelska versionen.
 
-Reflektion:
-Det gick bra at hämta data från det olika apierna tex att använda namnet på landet från REST countries för att hämta wikipedias api intro text och bild för landet, använda använda REST countries huvud stads cornidnater för att hämta vändret.
-Gick bra att använda shadcn komponenter och Tailwind CSS för utseendet skulle.
-något som vart svårt var paginering för det har jag aldrig jobbat med tidigare och URLsearchparams navigering för på denna skalan var också svårt av samma anledning.
-Något jag skulle göra annorlunda nästa gång är att vara  snabbare så jag kan lägga mer tid på att hemsidan ser bättre ut. Till nästa gång vill jag skriva bättre fel meddelade vid ett misslyckat API anrop i api.ts som mer beskriver felet specifikt.
+### Reflektion
+Det gick bra att hämta data från de olika API:erna. Till exempel använde jag landets namn från REST Countries för att hämta Wikipedias introduktionstext och bild. Jag använde också REST Countries API:s koordinater för huvudstaden för att hämta vädret.
 
+Det gick bra att använda shadcn-komponenter och Tailwind CSS för att skapa det utseende jag ville ha.
 
+Något som var svårt var paginering, eftersom jag aldrig hade arbetat med det tidigare. Navigering med URLSearchParams var också svårt av samma anledning.
 
-AI-redovisning: Jag använde Copilot för rådgivning, förklaring, kod exempel och felsöking. 
+Något jag skulle göra annorlunda nästa gång är att arbeta snabbare, så att jag kan lägga mer tid på att förbättra hemsidans utseende. Nästa gång vill jag skriva bättre felmeddelanden vid misslyckade API-anrop i `api.ts`, som beskriver felet mer specifikt.
 
+### AI-redovisning
+Jag använde Copilot för rådgivning, förklaringar, kodexempel och felsökning.
 
+## Om du vill köra projektet lokalt
+Du behöver Node.js och npm.
 
-## Om du vill köra projktet lokalt
-behöver du Node.js och npm
-
-### Rör att instalera
-1.Behöver du klona repot och öppna projektmappen
-2.du skriver npm install i din terminal
-3.skapa filen .env.local i projekts rotmap inte inuti i src
-4.Lägg din REST countries api key där i detta formatet:
-VITE_COUNTRIES_API_KEY=din_api_nyckel
-5.starta utveckling genom att skriva npm run dev i teminalen
-6.kontrolera Typescript och bygg  produktionsversionen med npm run build.
+### Så här installerar du projektet
+1. Klona repot och öppna projektmappen.
+2. Skriv `npm install` i terminalen.
+3. Skapa filen `.env.local` i projektets rotmapp, inte inuti `src`.
+4. Lägg in din REST Countries API-nyckel i följande format:
+   `VITE_COUNTRIES_API_KEY=din_api_nyckel`
+5. Starta utvecklingsservern genom att skriva `npm run dev` i terminalen.
+6. Kontrollera TypeScript och bygg produktionsversionen med `npm run build`.
